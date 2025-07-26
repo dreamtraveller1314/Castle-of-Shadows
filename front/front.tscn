@@ -1,0 +1,93 @@
+[gd_scene load_steps=9 format=3 uid="uid://bio23rb1du2rd"]
+
+[ext_resource type="Script" uid="uid://b2xvwu6gy8b0y" path="res://front/front.gd" id="1_7b4sd"]
+[ext_resource type="Texture2D" uid="uid://dae6kra3w6eg4" path="res://assets/front.png" id="1_uekkd"]
+[ext_resource type="Texture2D" uid="uid://ma2sjoaqqib6" path="res://assets/1 talk.png" id="3_ryhjl"]
+[ext_resource type="Texture2D" uid="uid://do8gudxmxnfmq" path="res://assets/title.png" id="3_xncio"]
+[ext_resource type="Texture2D" uid="uid://dogikn4r8d2yo" path="res://assets/2 talk.png" id="4_0dlqn"]
+[ext_resource type="Texture2D" uid="uid://cksx5vnys0al" path="res://assets/info.png" id="6_dfuwt"]
+[ext_resource type="Texture2D" uid="uid://du0bhebjlli7u" path="res://assets/play.png" id="7_iltax"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dfuwt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ryhjl")
+}],
+"loop": true,
+"name": &"talk 1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_0dlqn")
+}],
+"loop": true,
+"name": &"talk 2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_xncio")
+}],
+"loop": true,
+"name": &"title",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_7b4sd")
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 1960.0
+offset_bottom = 1156.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.59663, 0.567428)
+flat = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(573, 327)
+scale = Vector2(0.603125, 0.607407)
+texture = ExtResource("1_uekkd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(576.5, 323.5)
+scale = Vector2(0.600521, 0.600926)
+sprite_frames = SubResource("SpriteFrames_dfuwt")
+animation = &"title"
+
+[node name="play" type="Button" parent="."]
+offset_left = 447.0
+offset_top = 455.0
+offset_right = 2375.0
+offset_bottom = 1543.0
+scale = Vector2(0.119227, 0.119227)
+icon = ExtResource("7_iltax")
+flat = true
+
+[node name="info" type="Button" parent="."]
+offset_left = 443.0
+offset_top = 370.0
+offset_right = 2371.0
+offset_bottom = 1458.0
+scale = Vector2(0.122536, 0.122134)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_constants/h_separation = 0
+icon = ExtResource("6_dfuwt")
+flat = true
+clip_text = true
+expand_icon = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="info" to="." method="_on_info_pressed"]

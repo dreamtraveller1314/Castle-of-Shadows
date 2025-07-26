@@ -1,0 +1,79 @@
+[gd_scene load_steps=9 format=3 uid="uid://byl4ikhbfec0y"]
+
+[ext_resource type="Script" uid="uid://baxe807eqbyvq" path="res://front_2/front_2.gd" id="1_ncai6"]
+[ext_resource type="Texture2D" uid="uid://dae6kra3w6eg4" path="res://assets/front.png" id="2_icykv"]
+[ext_resource type="Texture2D" uid="uid://ma2sjoaqqib6" path="res://assets/1 talk.png" id="3_7lxaf"]
+[ext_resource type="Texture2D" uid="uid://dogikn4r8d2yo" path="res://assets/2 talk.png" id="4_clj41"]
+[ext_resource type="Texture2D" uid="uid://do8gudxmxnfmq" path="res://assets/title.png" id="5_mwhas"]
+[ext_resource type="Texture2D" uid="uid://du0bhebjlli7u" path="res://assets/play.png" id="6_4v6dh"]
+[ext_resource type="Texture2D" uid="uid://cksx5vnys0al" path="res://assets/info.png" id="7_qst7y"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5bapj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_7lxaf")
+}],
+"loop": true,
+"name": &"talk 1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_clj41")
+}],
+"loop": true,
+"name": &"talk 2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_mwhas")
+}],
+"loop": true,
+"name": &"title",
+"speed": 5.0
+}]
+
+[node name="Front2" type="Node2D"]
+script = ExtResource("1_ncai6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(573, 327)
+scale = Vector2(0.603125, 0.607407)
+texture = ExtResource("2_icykv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(576.5, 200)
+scale = Vector2(0.600521, 0.600926)
+sprite_frames = SubResource("SpriteFrames_5bapj")
+animation = &"title"
+
+[node name="play" type="Button" parent="."]
+offset_left = 447.0
+offset_top = 455.0
+offset_right = 2375.0
+offset_bottom = 1543.0
+scale = Vector2(0.119227, 0.119227)
+icon = ExtResource("6_4v6dh")
+flat = true
+
+[node name="info" type="Button" parent="."]
+offset_left = 443.0
+offset_top = 370.0
+offset_right = 2371.0
+offset_bottom = 1458.0
+scale = Vector2(0.122536, 0.122134)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_constants/h_separation = 0
+icon = ExtResource("7_qst7y")
+flat = true
+clip_text = true
+expand_icon = true
+
+[connection signal="pressed" from="play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="info" to="." method="_on_info_pressed"]
