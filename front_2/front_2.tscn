@@ -51,9 +51,9 @@ animation = &"title"
 
 [node name="play" type="Button" parent="."]
 offset_left = 447.0
-offset_top = 455.0
+offset_top = 470.0
 offset_right = 2375.0
-offset_bottom = 1543.0
+offset_bottom = 1558.0
 scale = Vector2(0.119227, 0.119227)
 icon = ExtResource("6_4v6dh")
 flat = true

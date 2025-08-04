@@ -6,6 +6,7 @@ func _ready() -> void:
 	$AnimatedSprite2D.animation = "title"
 	$info.visible = false
 	$play.visible = false
+	get_tree().paused = false
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
