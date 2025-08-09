@@ -90,9 +90,8 @@ func _on_timer_2_timeout() -> void:
 	pass # Replace with function body.
 	
 func torch():
-	var torch = $player/torch
-	torch.visible = true
-	torch.scale = Vector2(3, 3)
+	$player/torch.visible = true
+	create_tween().tween_property($player/torch, "scale", Vector2(3, 3), 0.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 
 func _on_timer_3_timeout() -> void:
 	$player/Camera2D/Panel.visible = false
