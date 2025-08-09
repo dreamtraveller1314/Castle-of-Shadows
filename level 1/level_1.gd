@@ -34,6 +34,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if chest_opened > 3:
+		$door.setdoor(true)
 	pass
 
 func call_question(index, chest:Node):
@@ -80,3 +82,13 @@ func torch():
 	var torch = $player/torch
 	torch.visible = true
 	torch.scale = Vector2(3, 3)
+
+func notdone():
+	$player/Dialogue.text = "You haven't opened all the chests yet"
+	$player/Dialogue.visible = true
+	$Timer3.start()
+
+func _on_timer_3_timeout() -> void:
+	$player/Dialogue.visible = false
+	$Timer3.stop()
+	pass # Replace with function body.

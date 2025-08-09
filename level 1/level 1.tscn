@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://c5slroryfuff7"]
+[gd_scene load_steps=26 format=4 uid="uid://c5slroryfuff7"]
 
 [ext_resource type="Script" uid="uid://chsedae4tma0y" path="res://level 1/level_1.gd" id="1_d6hbq"]
 [ext_resource type="Texture2D" uid="uid://ni80a83jwpb3" path="res://assets/castle tileset.png" id="1_oiosy"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://blggufd36yka" path="res://level 1/chest_2.gd" id="5_kqy0c"]
 [ext_resource type="PackedScene" uid="uid://bawo5som82gk0" path="res://level 1/door.tscn" id="5_m8ahx"]
 [ext_resource type="Script" uid="uid://b23i8vlxc7nm8" path="res://level 1/chest_3.gd" id="7_ius3n"]
+[ext_resource type="Script" uid="uid://crjb8lcvpppsn" path="res://level 1/door.gd" id="9_ua4rg"]
 [ext_resource type="Texture2D" uid="uid://drlmcrs0w3qdr" path="res://assets/fire.png" id="12_ius3n"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_re6nh"]
@@ -245,11 +246,12 @@ position = Vector2(16, 1111)
 script = ExtResource("5_kqy0c")
 
 [node name="chest 3" parent="." instance=ExtResource("4_ro7b6")]
-position = Vector2(1264, 181)
+position = Vector2(1524, 333)
 script = ExtResource("7_ius3n")
 
 [node name="door" parent="." instance=ExtResource("5_m8ahx")]
 position = Vector2(1350, 1422)
+script = ExtResource("9_ua4rg")
 
 [node name="player" type="CharacterBody2D" parent="."]
 position = Vector2(196, 158)
@@ -286,11 +288,11 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="LineEdit" type="LineEdit" parent="player"]
-offset_left = -573.0
-offset_top = 266.0
-offset_right = 4.0
-offset_bottom = 305.0
-scale = Vector2(2, 2)
+offset_left = -572.0
+offset_top = 270.0
+offset_right = -110.0
+offset_bottom = 308.0
+scale = Vector2(2.5, 2.5)
 clear_button_enabled = true
 
 [node name="result" type="RichTextLabel" parent="player"]
@@ -308,12 +310,20 @@ process_thread_group = 1
 process_thread_group_order = 0
 process_thread_messages = 0
 
+[node name="Timer3" type="Timer" parent="."]
+process_mode = 3
+process_thread_group = 1
+process_thread_group_order = 0
+process_thread_messages = 0
+
 [node name="Timer" type="Timer" parent="."]
 
 [connection signal="body_entered" from="special chest" to="special chest" method="_on_body_entered"]
 [connection signal="body_entered" from="chest 1" to="chest 1" method="_on_body_entered"]
 [connection signal="body_entered" from="chest 2" to="chest 2" method="_on_body_entered"]
 [connection signal="body_entered" from="chest 3" to="chest 3" method="_on_body_entered"]
+[connection signal="body_entered" from="door" to="door" method="_on_body_entered"]
 [connection signal="text_submitted" from="player/LineEdit" to="." method="_on_line_edit_text_submitted"]
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
+[connection signal="timeout" from="Timer3" to="." method="_on_timer_3_timeout"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

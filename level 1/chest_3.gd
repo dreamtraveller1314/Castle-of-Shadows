@@ -12,6 +12,6 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if chestopened == false:
-		get_parent().call_question(3, self)		
+		get_parent().call_question(2, self)		
 		chestopened = true
 	pass # Replace with function body.
