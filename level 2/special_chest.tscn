@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://bquhfc35lon8a"]
+
+[ext_resource type="Texture2D" uid="uid://kxqvjcnh51ia" path="res://assets/special chest.png" id="1_12hxa"]
+[ext_resource type="Texture2D" uid="uid://dvkks64tip7a1" path="res://assets/special_chest_open.png" id="2_ajg24"]
+[ext_resource type="Texture2D" uid="uid://drlmcrs0w3qdr" path="res://assets/fire.png" id="3_yeguk"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0wky4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_12hxa")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ajg24")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_yeguk")
+}],
+"loop": true,
+"name": &"torch",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fymal"]
+size = Vector2(20, 15.0182)
+
+[node name="special chest" type="Area2D"]
+scale = Vector2(3.92857, 3.92857)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_0wky4")
+animation = &"torch"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.127274)
+shape = SubResource("RectangleShape2D_fymal")
