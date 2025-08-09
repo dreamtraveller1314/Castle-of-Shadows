@@ -26,6 +26,12 @@ var questions = [
 	},
 ]
 # Called when the node enters the scene tree for the first time.
+
+func notdone():
+	$player/Dialogue.visible = true
+	$player/Dialogue.text = "You haven't opened all the chests yet"
+	$Timer3.start()
+
 func _ready() -> void:
 	$player/Dialogue.visible = false
 	$player/LineEdit.visible = false
@@ -82,11 +88,6 @@ func torch():
 	var torch = $player/torch
 	torch.visible = true
 	torch.scale = Vector2(3, 3)
-
-func notdone():
-	$player/Dialogue.text = "You haven't opened all the chests yet"
-	$player/Dialogue.visible = true
-	$Timer3.start()
 
 func _on_timer_3_timeout() -> void:
 	$player/Dialogue.visible = false
