@@ -29,6 +29,7 @@ var questions = [
 func _ready() -> void:
 	$player/Dialogue.visible = false
 	$player/LineEdit.visible = false
+	$player/torch.visible = false
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -51,8 +52,7 @@ func _on_line_edit_text_submitted(new_text: String) -> void:
 		get_tree().paused = true
 		$player/LineEdit.text = ""
 		if active_chest == $"special chest":
-			$"special chest".torch()
-			
+			torch()
 			pass
 	else:
 		$Timer.start()
@@ -75,3 +75,8 @@ func _on_timer_2_timeout() -> void:
 		active_chest.get_node("AnimatedSprite2D").play("new_animation")
 	$Timer2.stop()
 	pass # Replace with function body.
+	
+func torch():
+	var torch = $player/torch
+	torch.visible = true
+	torch.scale = Vector2(3, 3)

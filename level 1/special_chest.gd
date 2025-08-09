@@ -15,7 +15,3 @@ func _on_body_entered(body: Node2D) -> void:
 		get_parent().call_question(3, self)		
 		chestopened = true
 	pass # Replace with function body.
-
-func torch():
-	$AnimatedSprite2D.animation = "torch"
-	pass
