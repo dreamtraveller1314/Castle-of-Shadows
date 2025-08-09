@@ -12,12 +12,11 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-
 func _on_body_entered(body: Node2D) -> void:
 	if not ready_to_check:
 		return
-	elif door == true:
-		get_tree().change_scene_to_file("res://info_page/info_page.tscn")
+	if door == true:
+		get_parent().door()
 	else:
 		get_parent().notdone() 
 	pass # Replace with function body.
