@@ -278,18 +278,19 @@ position_smoothing_speed = 7.0
 
 [node name="Panel" type="Panel" parent="player"]
 offset_left = -574.0
-offset_top = 194.0
+offset_top = 182.0
 offset_right = 582.0
-offset_bottom = 270.0
+offset_bottom = 268.0
 
 [node name="Dialogue" type="RichTextLabel" parent="player/Panel"]
 layout_mode = 0
-offset_top = -16.0
-offset_right = 288.0
-offset_bottom = 7.0
-scale = Vector2(4, 4)
+offset_top = -10.0
+offset_right = 964.0
+offset_bottom = 89.0
+scale = Vector2(1.2, 1.2)
 bbcode_enabled = true
-text = "agdrty"
+text = "What is mental health? 
+ A) Physical well-being B) Emotional, psychological, and social well-being C) Financial well-being D) None of the above"
 horizontal_alignment = 1
 vertical_alignment = 1
 

@@ -5,23 +5,27 @@ var chest_opened = 0
 var active_chest: Node = null
 var questions = [
 	{
-		"text": "1",
-		"answers": ["a"],
+		"text": "What is mental health? (Answer in UPPER CASE)
+ A) Physical well-being B) Emotional, psychological, and social well-being C) Financial well-being D) None of the above",
+		"answers": ["B"],
 		"hint": "The 1st digit is 4"
 	},
 	{
-		"text": "2",
-		"answers": ["b"],
+		"text": "What is the most common mental disorder worldwide?  (Answer in UPPER CASE)
+		A) Bipolar Disorder B) PTSD C) Depression D) OCD",
+		"answers": ["C"],
 		"hint": "The 2nd digit is 7"
 	},
 	{
-		"text": "3",
-		"answers": ["c"],
+		"text": "Anxiety disorders are a type of mental illness.  (Answer in UPPER CASE)
+		A) True B) False",
+		"answers": ["A"],
 		"hint": "The 3rd digit is 2"
 	},
 	{
-		"text": "4",
-		"answers": ["d"],
+		"text": "What is the term for an extreme fear of being judged by others in social situations? (Answer in UPPER CASE)
+		A) Agoraphobia B) Social Anxiety Disorder C) Claustrophobia D) Panic Disorder",
+		"answers": ["B"],
 		"hint": "Here is your torch!"
 	},
 ]
