@@ -22,12 +22,6 @@ var questions = [
 		"answers": ["A"],
 		"hint": "The 3rd digit is 2"
 	},
-	{
-		"text": "What is the term for an extreme fear of being judged by others in social situations? (Answer in UPPER CASE)
-		A) Agoraphobia B) Social Anxiety Disorder C) Claustrophobia D) Panic Disorder",
-		"answers": ["B"],
-		"hint": "Here is your torch!"
-	},
 ]
 # Called when the node enters the scene tree for the first time.
 
@@ -64,9 +58,6 @@ func _on_line_edit_text_submitted(new_text: String) -> void:
 		$Timer2.start()
 		get_tree().paused = true
 		$player/Camera2D/LineEdit.text = ""
-		if active_chest == $"special chest":
-			torch()
-			pass
 	else:
 		$Timer.start()
 		$player/Camera2D/Panel/Dialogue.text = "Incorrect. Try Again"
@@ -88,10 +79,6 @@ func _on_timer_2_timeout() -> void:
 		active_chest.get_node("AnimatedSprite2D").play("new_animation")
 	$Timer2.stop()
 	pass # Replace with function body.
-	
-func torch():
-	$player/torch.visible = true
-	create_tween().tween_property($player/torch, "scale", Vector2(3, 3), 0.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 
 func _on_timer_3_timeout() -> void:
 	$player/Camera2D/Panel.visible = false
