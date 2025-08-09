@@ -220,6 +220,7 @@ animations = [{
 size = Vector2(36, 83)
 
 [node name="level1" type="Node2D"]
+position = Vector2(-736, -769)
 script = ExtResource("1_d6hbq")
 
 [node name="wall & floor" type="TileMapLayer" parent="."]
@@ -268,21 +269,23 @@ position = Vector2(0, 3.5)
 shape = SubResource("RectangleShape2D_ius3n")
 
 [node name="Camera2D" type="Camera2D" parent="player"]
-position = Vector2(4, 11)
-limit_left = -700
-limit_top = -50
-limit_right = 5000
-limit_bottom = 5000
+position = Vector2(2, 11)
+limit_left = -50000
+limit_top = -50000
+limit_right = 50000
+limit_bottom = 50000
+limit_smoothed = true
 position_smoothing_enabled = true
 position_smoothing_speed = 7.0
 
-[node name="Panel" type="Panel" parent="player"]
-offset_left = -574.0
-offset_top = 182.0
-offset_right = 582.0
-offset_bottom = 268.0
+[node name="Panel" type="Panel" parent="player/Camera2D"]
+offset_left = -578.0
+offset_top = 168.0
+offset_right = 578.0
+offset_bottom = 254.0
+metadata/_edit_use_anchors_ = true
 
-[node name="Dialogue" type="RichTextLabel" parent="player/Panel"]
+[node name="Dialogue" type="RichTextLabel" parent="player/Camera2D/Panel"]
 layout_mode = 0
 offset_top = -10.0
 offset_right = 964.0
@@ -293,28 +296,28 @@ text = "What is mental health?
  A) Physical well-being B) Emotional, psychological, and social well-being C) Financial well-being D) None of the above"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
-[node name="LineEdit" type="LineEdit" parent="player"]
-offset_left = -573.0
-offset_top = 262.0
-offset_right = -111.0
-offset_bottom = 294.0
+[node name="LineEdit" type="LineEdit" parent="player/Camera2D"]
+offset_left = -577.0
+offset_top = 248.0
+offset_right = -115.0
+offset_bottom = 280.0
 scale = Vector2(2.5, 2.5)
 clear_button_enabled = true
+metadata/_edit_use_anchors_ = true
 
-[node name="LineEdit2" type="LineEdit" parent="player"]
-offset_left = -573.0
-offset_top = 262.0
-offset_right = -111.0
-offset_bottom = 293.0
+[node name="LineEdit2" type="LineEdit" parent="player/Camera2D"]
+offset_left = -577.0
+offset_top = 248.0
+offset_right = -115.0
+offset_bottom = 279.0
 scale = Vector2(2.5, 2.5)
 clear_button_enabled = true
-
-[node name="result" type="RichTextLabel" parent="player"]
-offset_right = 40.0
-offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
 
 [node name="torch" type="Sprite2D" parent="player"]
+visible = false
 position = Vector2(8.00006, 47)
 scale = Vector2(20, 20)
 texture = ExtResource("12_ius3n")
@@ -338,8 +341,8 @@ process_thread_messages = 0
 [connection signal="body_entered" from="chest 2" to="chest 2" method="_on_body_entered"]
 [connection signal="body_entered" from="chest 3" to="chest 3" method="_on_body_entered"]
 [connection signal="body_entered" from="door" to="door" method="_on_body_entered"]
-[connection signal="text_submitted" from="player/LineEdit" to="." method="_on_line_edit_text_submitted"]
-[connection signal="text_submitted" from="player/LineEdit2" to="." method="_on_line_edit_2_text_submitted"]
+[connection signal="text_submitted" from="player/Camera2D/LineEdit" to="." method="_on_line_edit_text_submitted"]
+[connection signal="text_submitted" from="player/Camera2D/LineEdit2" to="." method="_on_line_edit_2_text_submitted"]
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
 [connection signal="timeout" from="Timer3" to="." method="_on_timer_3_timeout"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
