@@ -38,7 +38,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if chest_opened > 0:
+	if chest_opened > 2:
 		$door.setdoor(true)
 	pass
 
@@ -106,8 +106,8 @@ func _on_line_edit_2_text_submitted(new_text: String) -> void:
 		$player/PointLight2D.visible = false
 		$player/Camera2D/Panel.visible = false
 		$player/Camera2D/LineEdit2.visible = false
-		create_tween().tween_property($player/Camera2D, "zoom", Vector2(.35, .35), 1.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
-		create_tween().tween_property($player/Camera2D, "position", Vector2(-700, -700), 1.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+		create_tween().tween_property($player/Camera2D, "zoom", Vector2(.4, .4), 1.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+		create_tween().tween_property($player/Camera2D, "position", Vector2(-720, -700), 1.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 		await get_tree().create_timer(2.0).timeout
 		create_tween().tween_callback(Callable(self, "_go_to_next_scene"))
 	else:
