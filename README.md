@@ -1,4 +1,6 @@
 # Castle of Shadows
+https://dreamtraveller1314.itch.io/castle-of-shadows
+
 Castle of Shadows is a 2D pixel-art puzzle adventure about escaping the darkness within your own mind.
 You awaken trapped in a mysterious castle where the only way forward is to answer questions about mental health.
 Explore, solve riddles, collect clues, and uncover the truth behind the shadows.
