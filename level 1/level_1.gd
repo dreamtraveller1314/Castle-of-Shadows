@@ -112,6 +112,7 @@ func _on_line_edit_2_text_submitted(new_text: String) -> void:
 		$player/Camera2D/LineEdit2.visible = false
 		create_tween().tween_property($player/Camera2D, "zoom", Vector2(.4, .4), 1.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 		create_tween().tween_property($player/Camera2D, "position", Vector2(-618, -618), 1.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+		await get_tree().create_timer(2.0).timeout
 		create_tween().tween_callback(Callable(self, "_go_to_next_scene"))
 	pass # Replace with function body.
 	
