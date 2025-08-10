@@ -116,6 +116,7 @@ func _on_line_edit_2_text_submitted(new_text: String) -> void:
 		create_tween().tween_callback(Callable(self, "_go_to_next_scene"))
 	else:
 		$player/Camera2D/Panel/Dialogue.text = "Password wrong. I guess you will need to restart"
+		$player/Camera2D/LineEdit2.text = ""
 	pass # Replace with function body.
 	
 func _go_to_next_scene():

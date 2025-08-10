@@ -38,7 +38,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if chest_opened > 2:
+	if chest_opened > 0:
 		$door.setdoor(true)
 	pass
 
@@ -94,14 +94,26 @@ func door():
 func _on_line_edit_2_text_submitted(new_text: String) -> void:
 	answer = "531"
 	if new_text == answer:
+		$"wall & floor".modulate = Color(1,1,1)
+		$decorate.modulate = Color(1,1,1)
+		$"special chest".modulate = Color(1,1,1)
+		$"chest 1".modulate = Color(1,1,1)
+		$"chest 2".modulate = Color(1,1,1)
+		$"chest 3".modulate = Color(1,1,1)
+		$player/AnimatedSprite2D.modulate = Color(1,1,1)
+		$player/torch.modulate = Color(1,1,1)
+		$door.modulate = Color(1,1,1)
+		$player/PointLight2D.visible = false
 		$player/Camera2D/Panel.visible = false
 		$player/Camera2D/LineEdit2.visible = false
-		create_tween().tween_property($player/Camera2D, "zoom", Vector2(.4, .4), 1.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
-		create_tween().tween_property($player/Camera2D, "position", Vector2(-618, -618), 1.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+		create_tween().tween_property($player/Camera2D, "zoom", Vector2(.35, .35), 1.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+		create_tween().tween_property($player/Camera2D, "position", Vector2(-700, -700), 1.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+		await get_tree().create_timer(2.0).timeout
 		create_tween().tween_callback(Callable(self, "_go_to_next_scene"))
 	else:
 		$player/Camera2D/Panel/Dialogue.text = "Password wrong. I guess you will need to restart"
+		$player/Camera2D/LineEdit2.text = ""
 	pass # Replace with function body.
 	
 func _go_to_next_scene():
-	get_tree().change_scene_to_file("res://message_fragment/message_fragment.tscn")
+	get_tree().change_scene_to_file("res://outro/outro.tscn")
