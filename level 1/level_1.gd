@@ -114,7 +114,9 @@ func _on_line_edit_2_text_submitted(new_text: String) -> void:
 		create_tween().tween_property($player/Camera2D, "position", Vector2(-618, -618), 1.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 		await get_tree().create_timer(2.0).timeout
 		create_tween().tween_callback(Callable(self, "_go_to_next_scene"))
+	else:
+		$player/Camera2D/Panel/Dialogue.text = "Password wrong. I guess you will need to restart"
 	pass # Replace with function body.
 	
 func _go_to_next_scene():
-	get_tree().change_scene_to_file("res://level 2/level 2.tscn")
+	get_tree().change_scene_to_file("res://message_fragment/message_fragment.tscn")
