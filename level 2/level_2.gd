@@ -5,22 +5,22 @@ var chest_opened = 0
 var active_chest: Node = null
 var questions = [
 	{
-		"text": "What is mental health? (Answer in UPPER CASE)
- A) Physical well-being B) Emotional, psychological, and social well-being C) Financial well-being D) None of the above",
-		"answers": ["B"],
-		"hint": "The 1st digit is 4"
-	},
-	{
-		"text": "What is the most common mental disorder worldwide?  (Answer in UPPER CASE)
-		A) Bipolar Disorder B) PTSD C) Depression D) OCD",
-		"answers": ["C"],
-		"hint": "The 2nd digit is 7"
-	},
-	{
-		"text": "Anxiety disorders are a type of mental illness.  (Answer in UPPER CASE)
-		A) True B) False",
+		"text": "Which mental illness involves mood swings from extreme highs to extreme lows? (Answer in UPPER CASE)
+ A) Bipolar Disorder B) Schizophrenia C) OCD D) Depression",
 		"answers": ["A"],
-		"hint": "The 3rd digit is 2"
+		"hint": "The 1st digit is 5"
+	},
+	{
+		"text": "Mental illness only affects adults. (Answer in UPPER CASE)
+		A) True B) False",
+		"answers": ["B"],
+		"hint": "The 2nd digit is 3"
+	},
+	{
+		"text": "What is a common symptom of depression? (Answer in UPPER CASE)
+		A) Increased energy B) Loss of appetite C) Persistent sadness or loss of interest D) Excessive talking",
+		"answers": ["C"],
+		"hint": "The 3rd digit is 1"
 	},
 ]
 # Called when the node enters the scene tree for the first time.
@@ -92,11 +92,16 @@ func door():
 
 
 func _on_line_edit_2_text_submitted(new_text: String) -> void:
-	answer = "472"
+	answer = "531"
 	if new_text == answer:
 		$player/Camera2D/Panel.visible = false
 		$player/Camera2D/LineEdit2.visible = false
 		create_tween().tween_property($player/Camera2D, "zoom", Vector2(.4, .4), 1.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 		create_tween().tween_property($player/Camera2D, "position", Vector2(-618, -618), 1.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 		create_tween().tween_callback(Callable(self, "_go_to_next_scene"))
+	else:
+		$player/Camera2D/Panel/Dialogue.text = "Password wrong. I guess you will need to restart"
 	pass # Replace with function body.
+	
+func _go_to_next_scene():
+	get_tree().change_scene_to_file("res://message_fragment/message_fragment.tscn")
