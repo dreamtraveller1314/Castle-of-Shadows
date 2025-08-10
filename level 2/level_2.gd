@@ -34,12 +34,11 @@ func _ready() -> void:
 	$player/Camera2D/Panel.visible = false
 	$player/Camera2D/LineEdit.visible = false
 	$player/Camera2D/LineEdit2.visible = false
-	$player/torch.visible = false
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if chest_opened > 3:
+	if chest_opened > 2:
 		$door.setdoor(true)
 	pass
 

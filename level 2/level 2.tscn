@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=4 uid="uid://dmwoc4lwrsp43"]
+[gd_scene load_steps=52 format=4 uid="uid://dmwoc4lwrsp43"]
 
 [ext_resource type="Script" uid="uid://c5c16x7dfmpij" path="res://level 2/level_2.gd" id="1_olhh4"]
 [ext_resource type="Texture2D" uid="uid://ni80a83jwpb3" path="res://assets/castle tileset.png" id="2_cdonu"]
@@ -269,8 +269,8 @@ physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_re6nh")
 
 [sub_resource type="Gradient" id="Gradient_xq4vo"]
-offsets = PackedFloat32Array(0, 0.279202, 0.512821)
-colors = PackedColorArray(1, 1, 1, 1, 0.0819238, 0.0819238, 0.0819238, 1, 0.0447761, 0.0447761, 0.0447761, 1)
+offsets = PackedFloat32Array(0, 0.205128)
+colors = PackedColorArray(1, 1, 1, 1, 0.0819238, 0.0819238, 0.0819238, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_p4j8j"]
 gradient = SubResource("Gradient_xq4vo")
@@ -358,6 +358,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_olhh4"]
+size = Vector2(37, 86)
+
 [node name="level2" type="Node2D"]
 position = Vector2(-736, -769)
 script = ExtResource("1_olhh4")
@@ -370,6 +373,7 @@ tile_map_data = PackedByteArray("AAAdAAAAAQADAAsAAAAdAAEAAQADAAsAAAAdAAIAAQADAAs
 tile_set = SubResource("TileSet_d6hbq")
 
 [node name="special chest" parent="." instance=ExtResource("3_xqt82")]
+visible = false
 modulate = Color(0.156863, 0.156863, 0.156863, 1)
 position = Vector2(1465, 1252)
 script = ExtResource("4_4btd0")
@@ -407,7 +411,7 @@ script = ExtResource("10_tp3st")
 [node name="PointLight2D" type="PointLight2D" parent="player"]
 position = Vector2(1.99997, 0)
 scale = Vector2(0.275803, 0.30708)
-energy = 6.0
+energy = 7.0
 texture = SubResource("GradientTexture2D_p4j8j")
 texture_scale = 35.17
 
@@ -417,6 +421,10 @@ position = Vector2(3.49999, -2)
 scale = Vector2(1.63158, 1.63158)
 sprite_frames = SubResource("SpriteFrames_m8ahx")
 animation = &"new_animation_1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_olhh4")
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 position = Vector2(2, 11)
