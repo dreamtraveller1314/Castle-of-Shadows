@@ -7,6 +7,10 @@ func _ready() -> void:
 	$info.visible = false
 	$play.visible = false
 	get_tree().paused = false
+	if not get_tree().get_root().has_node("MusicPlayer"):
+		var music = preload("res://bgm.tscn").instantiate()
+		music.name = "MusicPlayer"
+		get_tree().get_root().add_child(music)
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

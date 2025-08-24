@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d4bqglljmtwv"
-path="res://.godot/imported/Castle of Shadows.icon.png-213505d199bb0d0e68c50814036b922a.ctex"
+path="res://.godot/imported/Castle of Shadows.icon.png-49b9defb4f59d57e97458e846a8149e7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Export/HTML/Castle of Shadows.icon.png"
-dest_files=["res://.godot/imported/Castle of Shadows.icon.png-213505d199bb0d0e68c50814036b922a.ctex"]
+source_file="res://Export/Castle of Shadow HTML/Castle of Shadows.icon.png"
+dest_files=["res://.godot/imported/Castle of Shadows.icon.png-49b9defb4f59d57e97458e846a8149e7.ctex"]
 
 [params]
 

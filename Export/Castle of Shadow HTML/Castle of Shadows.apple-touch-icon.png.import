@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d5n00q6w055y"
-path="res://.godot/imported/Castle of Shadows.apple-touch-icon.png-6f0705f722face8251dff6f865ab30e2.ctex"
+path="res://.godot/imported/Castle of Shadows.apple-touch-icon.png-39d46c24e4f738931463927aaf46bb7e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Export/HTML/Castle of Shadows.apple-touch-icon.png"
-dest_files=["res://.godot/imported/Castle of Shadows.apple-touch-icon.png-6f0705f722face8251dff6f865ab30e2.ctex"]
+source_file="res://Export/Castle of Shadow HTML/Castle of Shadows.apple-touch-icon.png"
+dest_files=["res://.godot/imported/Castle of Shadows.apple-touch-icon.png-39d46c24e4f738931463927aaf46bb7e.ctex"]
 
 [params]
 
